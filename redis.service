@@ -5,18 +5,18 @@ Documentation=https://redis.io/documentation
 #AssertPathExists=/var/lib/redis
 
 [Service]
-#ExecStart=/usr/local/redis/redis-server --supervised systemd --daemonize yes
+#ExecStart=/usr/local/redis/bin/redis-server --supervised systemd --daemonize yes
 ## Alternatively, have redis-server load a configuration file:
-#ExecStart=/usr/local/redis/redis-server /usr/local/redis/redis.conf
-ExecStart=/usr/local/redis/redis-server /usr/local/redis/redis.conf
-ExecStop=/usr/local/redis/redis-cli shutdown
+#ExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/redis.conf
+ExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/redis.conf
+ExecStop=/usr/local/redis/bin/redis-cli shutdown
 Restart=always
 LimitNOFILE=10032
 NoNewPrivileges=yes
 #OOMScoreAdjust=-900
 #PrivateTmp=yes
 #Type=notify
-# ×¢Òâ notify »áÊ§°Ü£¬»»³É forking ·½Ê½Æô¶¯£¬ÈÃÖ÷½ø³Ì¸´ÖÆÒ»¸ö×Ó½ø³ÌµÄ·½Ê½Ö´ĞĞ
+# æ³¨æ„ notify ä¼šå¤±è´¥ï¼Œæ¢æˆ forking æ–¹å¼å¯åŠ¨ï¼Œè®©ä¸»è¿›ç¨‹å¤åˆ¶ä¸€ä¸ªå­è¿›ç¨‹çš„æ–¹å¼æ‰§è¡Œ
 Type=forking
 #TimeoutStartSec=100
 #TimeoutStopSec=100

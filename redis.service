@@ -12,18 +12,10 @@ ExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/redis.conf
 ExecStop=/usr/local/redis/bin/redis-cli shutdown
 Restart=always
 LimitNOFILE=10032
-NoNewPrivileges=yes
-#OOMScoreAdjust=-900
-#PrivateTmp=yes
 #Type=notify
 # 注意 notify 会失败，换成 forking 方式启动，让主进程复制一个子进程的方式执行
 Type=forking
-#TimeoutStartSec=100
-#TimeoutStopSec=100
 UMask=0077
-#User=root
-#Group=root
-#WorkingDirectory=/var/lib/redis
 
 [Install]
 WantedBy=multi-user.target
